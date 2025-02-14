@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<link type="text/css" href="css/style.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+			<!-- 下雪-->
+	<script type="text/javascript" src="js/snowstorm.js"></script>
+	<style>
+        #div1 {
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+		<div class="box" id="div1">
+				<ul class="minbox">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ol class="maxbox">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+		</div>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* @date 2024-08-15</span><br />
+				<span class="space"/><span class="comments">* @version V1.1.0(Updating)</span><br />
+				<span class="space"/><span class="comments">* @brief  A lovestory of boy and little girl.</span><br />
+				<span class="space"/><span class="comments">**/</span><br />
+				<span class="space"/>Boy.name = K.K<br />
+				<span class="space"/>Girl.name = Qiu Qiu<br />
+				<span class="space"/>They met in a long summer,<br />
+				<span class="space"/>and fall in love.<br />
+				<span class="space"/>/* The boy loved the little girl.*/<br />
+				<span class="space"/>/* The little girl loved the boy also.*/<br />
+				<span class="space"/>As time goes by,<br />
+				<span class="space"/>they had an agreement:<br />
+				<span class="space"/>to be together forever,<br />
+				<span class="space"/>never to be separated.<br />
+				<span class="keyword">They have experienced ups and downs,<br />
+				<span class="space"/>though the road ahead is long,<br />
+				<span class="space"/>the future is still far away,<br />
+				<span class="space"/>boy has but one dream:<br />
+				<span class="space"/>that is,<br />girl can always be happy as can be.</span> <br />
+				<br />
+			</div>
+			
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						球球, 情人节快乐，还有，我爱你！
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+							ずっと、好きだよ。<br/>
+						<div class="signature">- 爱你的K.K</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+  <audio preload="auto" autoplay="" id="media" src="./love.mp3" 
+      autoplay preload loop="loop"></audio>
+	</div>
+
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2024, 08, 15);
+		together.setHours(20);
+		together.setMinutes(38);
+		together.setSeconds(09);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
